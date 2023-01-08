@@ -1,0 +1,19 @@
+html {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.list__item {
+    list-style: none;
+}
+
+.list__item--done {
+    text-decoration: line-through;
+}
