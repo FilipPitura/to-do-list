@@ -18,12 +18,28 @@
             <li class="list__item${task.done ? " list__item--done" : ""}"
             >
             ${task.content}
+            <button class="js-removeButton">🗑</button>
             </li>
             `
         };
 
+        const taskRemove = (taskIndex) => {
+            tasks.splice(taskIndex, 1);
+            render();
+        };
+
         document.querySelector(".js-tasks").innerHTML = htmlString
+
+        const removeButtons = document.querySelectorAll(".js-removeButton");
+
+        removeButtons.forEach((removeButton, taskIndex) => {
+            removeButton.addEventListener("click", () => {
+                taskRemove(taskIndex);
+            });
+        });
     };
+
+
 
     const addNewtask = (newTaskContent) => {
         tasks.push({
@@ -32,18 +48,18 @@
 
         render();
     };
- 
+
     const onFormSubmit = (event) => {
         event.preventDefault();
 
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
 
         if (newTaskContent === "") {
-            return; 
+            return;
         }
 
         addNewtask(newTaskContent);
-        };
+    };
 
 
     const init = () => {
@@ -51,7 +67,7 @@
 
         const form = document.querySelector(".js-form");
 
-        form.addEventListener("sumbit", onFormSubmit);
+        form.addEventListener("submit", onFormSubmit);
     };
 
     init();
