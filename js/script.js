@@ -14,7 +14,7 @@
     const bindEvents = (index) => {
         const removeButtons = document.querySelectorAll(".js-removeButton");
 
-        removeButtons.forEach((removeButton, tasksIndex) => {
+        removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
                 taskRemove(index);
             });
@@ -34,12 +34,13 @@
 
         for (const task of tasks) {
             htmlString += `
-            <li class="list__item${task.done ? " list__item--done" : ""}"
-            >
-            <button class="js-doneToggleButton">✔</button>
-            ${task.content}
-            <button class="js-removeButton">🗑</button>
+            <div class="tasksContainer">
+            <button class="js-doneToggleButton doneToggleButton">✔</button>
+            <li class="list__item ${task.done ? " list__item--done" : ""}"> ${task.content}         
             </li>
+            <button class="js-removeButton removeButton">🗑</button>
+            </div>
+            <hr>
             `
         };
 

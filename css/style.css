@@ -8,6 +8,30 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #eee;
+    word-break: break-word;
+}
+
+.mainContainer {
+    margin-left: 22%;
+    margin-right: 22%;
+}
+
+.addingTasksContainer {
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px #DDD5D4;
+}
+
+.tasksListContainer {
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px #DDD5D4;
+    text-align: left;
+}
+
+.tasksContainer {
+    display: flex;  
+    justify-content: space-around;
+   
 }
 
 .list__item {
@@ -16,4 +40,57 @@ body {
 
 .list__item--done {
     text-decoration: line-through;
+}
+
+.header {
+    font-weight: 700;
+    text-align: left;
+}
+
+.addNewTaskHeader {
+    padding: 15px;
+    margin: 0px;
+}
+
+.form__addNewTaskButton {
+    background-color: teal;
+    color: #fff;
+    padding: 10px;
+    margin: 15px;
+    border: 1px solid rgb(75, 72, 72);
+}
+
+.doneToggleButton {
+    background-color: rgb(30, 128, 30);
+    color: #fff;
+    border: 0px;
+    width: 25px;
+    height: 25px;
+}
+
+.removeButton {
+    background-color: rgb(233, 41, 41);
+    color: #fff;
+    border: 0px;
+    width: 25px;
+    height: 25px;
+}
+
+
+.form__input {
+    margin: 15px;
+    margin-right: 0px;
+    height: 40px;
+}
+
+.tasksContainer {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 10px;
+    align-items: center;
+    padding: 10px;
+}
+
+.removeButton {
+    justify-content: flex-end;
 }
